@@ -9,20 +9,19 @@
   <title>TinyApp</title>
 </head>
 <body style="font-size:20px; padding:50px;">
-    <h2>Loop</h2>
+    <header>
+
+        <% include ./partials/_header %>
+
+    </header>
+
+    <h2></h2>
 
     <ul>
-            <h5>Shortened URL</h5>
-            <li><%= shortURL %></li>     
+       <li><%= shortURL %> : <%= longURL %></li>     
     </ul>
 
 
-    <ul>
-            <h5>Long URL</h5>
-            <li><%= longURL %></li>
-    </ul>
-
-    
     <a href="#">New Link Created</a>
 
 </body>

@@ -9,7 +9,14 @@
   <title>TinyApp</title>
 </head>
 <body style="font-size:20px; padding:50px;">
-    <h2>Loop</h2>
+    <header>
+
+        <% include ./partials/_header %>
+
+    </header>
+
+
+    <h3>My URLs:</h3>
 
     <ul>
         <% Object.values(urls).forEach(function(element) { %>
