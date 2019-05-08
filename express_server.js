@@ -36,6 +36,8 @@ app.get("/hello", (req, res) => {
 app.get("/urls", (req, res) => {
     let templateVars = { urls: urlDatabase };
     res.render("urls_index", templateVars);
+    // res.render("urls_index", {abc: 123}); remember the data passed into ejs
+    // is an object, then in the ejs file just type abc and 123 will show up on the webpage urls_index.
 });
 
 app.get("/urls/new", (req, res) => {
@@ -57,9 +59,15 @@ app.post("/urls", (req, res) => {
 
 app.get("/u/:shortURL", (req, res) => {
 
-    const longURL = urlDatabase[req.params.shortURL];
+    const longURL = urlDatabase[shortURL];
     res.redirect(longURL);
 });
+
+app.post("/urls/:shortURL/delete", (req, res) => {
+    delete urlDatabase[req.params.shortURL];
+    res.redirect("/urls")
+});
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
