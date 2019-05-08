@@ -18,7 +18,13 @@
     <h2></h2>
 
     <ul>
-       <li><%= shortURL %> : <%= longURL %></li>     
+       <li><%= shortURL %> : <%= longURL %></li> 
+       <form method="POST" action="/urls/<%= shortURL%>">
+        <input type = "submit" value = "update">
+        <input type = "text" name="newURL">
+
+            </li>
+    </form>    
     </ul>
 
 
