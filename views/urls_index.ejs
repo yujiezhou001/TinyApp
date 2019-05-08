@@ -21,12 +21,14 @@
 
     <ul>
         <% Object.keys(urls).forEach(function(element) { %>
-            <li><%= element %> - <%=urls[element]%> 
+            <li>
             <form method="POST" action=<%=`/urls/${element}/delete`%>>
+                <%= element %> - <%=urls[element]%> 
                 <input type = "submit" value = "delete">
-                    </li>
+                   
             </form>
             <a href= <%= element %> >Edit</a>
+        </li>
         <% }); %>
     </ul>
 
