@@ -19,8 +19,8 @@
     <h3>My URLs:</h3>
 
     <ul>
-        <% Object.values(urls).forEach(function(element) { %>
-            <li><%= element %></li>
+        <% Object.keys(urls).forEach(function(element) { %>
+            <li><%= element %> - <%=urls[element]%></li>
         <% }); %>
     </ul>
 
