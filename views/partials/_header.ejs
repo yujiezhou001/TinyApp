@@ -2,12 +2,12 @@
           Tiny App 
 <h1>
 
-<% if(username){ %>
+<% if(userObject){ %>
    
 <h3>
 
       <form method="POST" action="/logout">
-          <h5> Logged in as <%= username %>!</h4>
+          <h5> Logged in as <%= userObject.email %>!</h4>
           <input type = "submit" value = "logout" class="btn btn-primary">
      </form>
 
