@@ -20,19 +20,23 @@
     <h3>My URLs:</h3>
 
     <ul>
+
         <% Object.keys(urls).forEach(function(element) { %>
             <li>
+
             <form method="POST" action=<%=`/urls/${element}/delete`%>>
                 <%= element %> - <%=urls[element]%> 
-                <input type = "submit" value = "delete">
-                   
+
+            <input type = "submit" value = "delete" class = "btn btn-danger">
+            
             </form>
-            <a href= <%= element %> >Edit</a>
-        </li>
+
+        <a href="urls/<%= element %>">Edit</a>
+    </li>
+
         <% }); %>
     </ul>
 
-    <a href="#">Link for shortening a new URL</a>
 
 </body>
 </html>

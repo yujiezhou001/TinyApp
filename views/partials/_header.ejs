@@ -1,3 +1,26 @@
 <h1>
-     Tiny App   
+          Tiny App 
 <h1>
+
+<% if(username){ %>
+   
+<h3>
+
+      <form method="POST" action="/logout">
+          <h5> Logged in as <%= username %>!</h4>
+          <input type = "submit" value = "logout" class="btn btn-primary">
+     </form>
+
+</h3>
+
+ <% } else{ %>  
+                
+<h3>
+     <form method="POST" action="/login">           
+          <input type = "text" style="width: 200px" name="username">
+          <input type = "submit" value = "login" class= "btn btn-primary">
+     </form>
+
+</h3>
+
+<% } %>
