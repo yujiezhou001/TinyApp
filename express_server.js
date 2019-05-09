@@ -1,5 +1,7 @@
 var express = require("express");
+var cookieParser = require('cookie-parser')
 var app = express();
+app.use(cookieParser())
 var PORT = 8080; // default port 8080
 function generateRandomString() {
     return Math.random()
@@ -34,18 +36,29 @@ app.get("/hello", (req, res) => {
 //new route handler for urls.
 //render passes tempalteVars(urls object) to 'urls_index'(ejs file)
 app.get("/urls", (req, res) => {
-    let templateVars = { urls: urlDatabase };
+    let templateVars = { 
+      urls: urlDatabase,
+      username: req.cookies["username"]
+    };
     res.render("urls_index", templateVars);
     // res.render("urls_index", {abc: 123}); remember the data passed into ejs
     // is an object, then in the ejs file just type abc and 123 will show up on the webpage urls_index.
 });
 
 app.get("/urls/new", (req, res) => {
-    res.render("urls_new");
-  });
+    let templateVars = { 
+      urls: urlDatabase,
+      username: req.cookies["username"]
+    };
+    res.render("urls_new", templateVars);
+});
 
 app.get("/urls/:shortURL", (req, res) => {
-    let templateVars = { shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL]};
+    let templateVars = {
+      shortURL: req.params.shortURL,
+      longURL: urlDatabase[req.params.shortURL],
+      username: req.cookies["username"]
+    };
     res.render("urls_show", templateVars);
 });
 
@@ -65,14 +78,24 @@ app.get("/u/:shortURL", (req, res) => {
 
 app.post("/urls/:shortURL/delete", (req, res) => {
     delete urlDatabase[req.params.shortURL];
-    res.redirect("/urls")
+    res.redirect("/urls");
 });
 
 app.post("/urls/:id", (req, res) => {
   urlDatabase[req.params.id]= req.body.newURL;
-  res.redirect("/urls/" + req.params.id)
+  res.redirect("/urls/" + req.params.id);
 });
 
+app.post("/login", (req, res) => {
+  console.log('Cookies: ', req.body.username);
+  res.cookie("username", req.body.username);
+  res.redirect("/urls");
+});
+
+app.post("/logout", (req, res) => {
+  res.clearCookie("username");
+  res.redirect("/urls");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
