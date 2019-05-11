@@ -4,9 +4,9 @@
 
 ## Final Product
 
-    !["Screenshot of urls/new page"](docs/urls:new-page.png)
+    !["Screenshot of urls/new page"](#)
 
-    !["Screenshot of urls page"](docs/urls-page.png)
+    !["Screenshot of urls page"](#)
     
 
 ## Dependencies

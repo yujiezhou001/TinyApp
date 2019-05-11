@@ -2,12 +2,16 @@
           Tiny App 
 <h1>
 
+
 <% if(userObject){ %>
    
 <h3>
 
       <form method="POST" action="/logout">
-          <h5> Logged in as <%= userObject.email %>!</h4>
+          <h5> Logged in as <%= userObject.email %>!</h5>
+
+          <h6> <a href="/urls/new">Create New Link</a> | <a href="/urls">Home Page</a></h6>
+
           <input type = "submit" value = "logout" class="btn btn-primary">
      </form>
 
