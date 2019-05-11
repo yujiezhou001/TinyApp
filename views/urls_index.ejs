@@ -21,17 +21,17 @@
 
     <ul>
 
-        <% Object.keys(urls).forEach(function(element) { %>
+        <% Object.keys(urls).forEach(function(shortURL) { %>
             <li>
 
-            <form method="POST" action=<%=`/urls/${element}/delete`%>>
-                <%= element %> - <%=urls[element]%> 
+            <form method="POST" action=<%=`/urls/${shortURL}/delete`%>>
+                <%= shortURL %> - <%= urls[shortURL].longURL %> 
 
             <input type = "submit" value = "delete" class = "btn btn-danger">
             
             </form>
 
-        <a href="urls/<%= element %>">Edit</a>
+        <a href="urls/<%= shortURL %>">Edit</a>
     </li>
 
         <% }); %>
