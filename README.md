@@ -4,9 +4,9 @@
 
 ## Final Product
 
-    !["Screenshot of create new  link page"](docs/create_link_page.png)
+    !["Screenshot of create new link page"](https://github.com/yujiezhou001/TinyApp/blob/master/docs/create_link_page.png?raw=true)
 
-    !["Screenshot of urls page"](docs/urls_page.png)
+    !["Screenshot of urls page"](https://github.com/yujiezhou001/TinyApp/blob/master/docs/urls_page.png?raw=true)
     
 
 ## Dependencies
