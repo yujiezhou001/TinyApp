@@ -6,7 +6,7 @@
 
     !["Screenshot of urls/new page"](https://github.com/yujiezhou001/TinyApp/blob/master/docs/urls:new-page.png?raw=true)
 
-    !["Screenshoto of urls page"](https://github.com/yujiezhou001/TinyApp/blob/master/docs/urls-page.png?raw=true)
+    !["Screenshot of urls page"](https://github.com/yujiezhou001/TinyApp/blob/master/docs/urls-page.png?raw=true)
 
 ## Dependencies
 
